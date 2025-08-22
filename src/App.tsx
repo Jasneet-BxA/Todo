@@ -21,7 +21,7 @@ const App: React.FC = () => {
           setTasks(parsed);
         }
       } catch (error) {
-        console.error('Error parsing tasks from localStorage:', error);
+        console.error('Error', error);
       }
     }
   }, []);
@@ -30,7 +30,7 @@ const App: React.FC = () => {
     try {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     } catch (error) {
-      console.error('Error saving tasks to localStorage:', error);
+      console.error('Error', error);
     }
   }, [tasks]);
 
