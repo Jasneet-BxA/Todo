@@ -53,23 +53,21 @@ const App: React.FC = () => {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
+
   return (
     <div className="todo-container">
       <h1>Simple Todo App</h1>
       <TaskForm onAdd={addTask} />
       <ul>
-        {tasks.length === 0 ? (
-          <h3 style={{ color: 'white', textAlign: 'center' }}>No Tasks</h3>
-        ) : (
-          tasks.map(task => (
-            <TaskItem
-              key={task.id}
-              task={task}
-              onToggle={toggleTask}
-              onDelete={deleteTask}
-            />
-          ))
-        )}
+        {tasks.map(task => (
+          <TaskItem
+            key={task.id}
+            task={task}
+            onToggle={toggleTask}
+            onDelete={deleteTask}
+          />
+        ))
+        }
       </ul>
     </div>
   );
